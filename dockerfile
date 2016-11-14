@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y gdc
 COPY . /d
 
 # Compile them
-RUN gdc /d/src/main.d -o /d/main.o
+RUN gdc /d/src/*.d -o /d/main
 
 # Provide entrypoint
-ENTRYPOINT ["/d/main.o"]
+ENTRYPOINT ["/d/main"]

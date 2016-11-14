@@ -38,5 +38,5 @@ public void factorial01(int n) {
 	// Print result
 	writeln("Done calculating.");
 	writeln("Prepare formatting and printing.");
-	writefln("%d!=%s", n, total.toDecimalString());
+	writefln("%d!~2^%d", n, total.uintLength()*32);
 }

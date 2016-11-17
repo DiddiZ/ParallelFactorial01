@@ -7,6 +7,7 @@ import std.math;
 import std.concurrency;
 import std.range;
 import src.factorial01;
+import src.factorial02;
 import src.primes01;
 
 int main(string[] args) {
@@ -20,8 +21,11 @@ int main(string[] args) {
 
 	final switch (args[1])
 	{
-		case "factorial":
+		case "factorial01":
 			factorial01(n);
+			break;
+		case "factorial02":
+			factorial02(n);
 			break;
 		case "primes":
 			primes01(n);

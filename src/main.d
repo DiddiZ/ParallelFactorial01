@@ -9,6 +9,7 @@ import std.range;
 import src.factorial01;
 import src.factorial02;
 import src.primes01;
+import core.time;
 
 int main(string[] args) {
 	if(args.length != 3) {
@@ -18,6 +19,8 @@ int main(string[] args) {
 
 	// Read n:
 	auto n = to!uint(args[2]);
+
+	auto startTime = MonoTime.currTime();
 
 	final switch (args[1])
 	{
@@ -31,5 +34,9 @@ int main(string[] args) {
 			primes01(n);
 			break;
 	}	
+	
+	writefln("Computation took %f ms", ticksToNSecs( MonoTime.currTime().ticks - startTime.ticks)/1000000.0);
+	
+	
 	return 0;
 }
